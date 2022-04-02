@@ -1,0 +1,13 @@
+it’s about creating a website/API that will be filled with data that will be continuously fetching from the web and processed.
+
+The question is quite extensive - depending on the programming language, there may be different options. Using the example of Python, an approximate scheme could be:
+
+1) Create a program / script that does web scraping. For example with Scrapy or requests/lxml etc.
+
+2) Design a database structure for the data that will be retrieved in the process of web scraping. For example, with PostgreSQL or MongoDB.
+
+3) Create a web application based on the framework (with Flask or Django), which will take data from the database and return them in the form of an API or a simple web pages.
+
+4) Implement the background task queues to be run continuously or periodically. Launching webspider , data processing, saving to database, all required tasks for handling data - with Celery + Redis Queue. If you need, there are additional tools needed for analysis and wrangling data (Pandas, NLTK and other libraries and frameworks).
+
+5) (Optional but desirable). Create a monitoring 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <style type="text/css">
+        body {
+            background: url({% static "background-image2.jpg" %});
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color:white;
+        } 
+        </style> 
+      
+
+    <title>Duration form</title>
+</head>
+
+<body>
+    <div class="container col-10 p-3 pb-5" style="color: #006666">
+        <h2 style="text-align:center"> <u> Select for seeing your expected news </u> </h2>
+    </div>
+    
+
+    <div class="container col-3 p-3 pb-2">
+        <form action="{% url 'news' %}">
+            <label class="center-block mx-3">Today's news: </label>
+            <button class="center-block btn btn-success" type="submit" name="news_duration" value="none"> see news </button>
+        </form>
+    </div>
+
+
+    <div class="container col-3 p-3 pb-5">
+        <form action="{% url 'news' %}">
+            <label class="center-block mx-2">Last 7 days news: </label>
+            <button class="center-block btn btn-success" type="submit" name="news_duration" value="seven"> see news </button>
+        </form>
+    </div>
+    
+        {% comment %} <form action="{% url 'news' %}"> 
+            <div class="container col-10 pt-3 mb-3">
+            <button type="submit" name="news_duration" value="seven"> Last 7 days news </button>
+            </div>
+        </form> {% endcomment %}
+
+    
+
+    <div class="container col-3 pt-2 border border-secondary" style="text-align:center">
+        <label class="center-block pb-4"> Serach news by date </label>
+        <form action="{% url 'news' %}">
+                <div>
+                <label> start date: </label>
+                <input type="date" name="sDate" placeholder="yyyy-mm-dd" value="" min="2020-03-30" max="2022-03-30">
+                {% comment %} <input type="text" name="sDate"> {% endcomment %}
+                <br>
+                <label class="pt-3"> end date :  </label>
+                <input type="date" name="eDate" placeholder="yyyy-mm-dd" value="" min="2020-03-30" max="2022-03-30">
+                {% comment %} <input type="text" name="eDate"> {% endcomment %}
+                </div>
+
+                <div class="p-3 mx-5">
+                <input type="submit" name="news_duration" value="search" class="rounded-2" style="background-color:green; color:white">
+                </div>
+        </form>
+    </div>
+    
+
+
+    {% comment %} <form action="{% url 'news' %}"> {% endcomment %}
+        {% comment %} {% csrf_token %} {% endcomment %}
+        {% comment %} <label for="news_duration">Choose a duration to see your expected news</label>
+        <select name="news_duration">
+            <option value="seven"> seven days news </option>
+            <option value="search"> search news 
+                    <label> start date </label>
+                    <input type="text" name="sDate" value=""> 
+                    <label> end date </label>
+                    <input type="text" name="eDate" value=""> 
+                
+            </option>
+        </select>
+        <input type="submit" value="search"> {% endcomment %}
+    {% comment %} </form> {% endcomment %}
+
+        <br> <br>
+
+</body>
+</html>
+

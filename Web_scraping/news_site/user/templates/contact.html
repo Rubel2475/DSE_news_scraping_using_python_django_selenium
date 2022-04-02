@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+
+{% block title %}
+feedback Form
+{% endblock title %}
+
+{% block content%}
+
+    <h3 class="container col-10 pt-5" style="text-align:center;">Feedback Form</h3>
+    <div class="container col-10 pb-2" style="text-align:center;">Feel free to write your experience about our website.If you think there need to update something or facing problem with something please tell us as if we can update and give our best service to you.</div>
+    <hr/>
+    <form method="post" action="/contact" class="container col-3 pt-3" style="text-align:center;">
+        {% include 'messages.html' %}
+        {% if messages %}
+            {% for msg in messages %}
+            <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+        {% csrf_token %}
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Your name</th>
+                <td><input type="text" name="full_name" /></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="email" name="email" /></td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>
+                    <textarea name="message"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" ><input type="submit" value="Submit" style="background-color:green" /></td>
+            </tr>
+        </table>
+    </form>
+{% endblock content%}

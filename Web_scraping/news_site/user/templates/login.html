@@ -1,0 +1,29 @@
+{% extends 'header.html' %}
+
+{%load static%}
+
+{% block title %} login  {% endblock title %}
+
+{% block content %}
+    
+{% load crispy_forms_tags %}
+
+<!--Login--> 
+<div class="container py-5"  >
+  {% include 'messages.html' %}
+
+  <form class="container col-3" method="POST" style="text-align:center; background: url({% static "background-2.webp" %}); background-size: 100% 100%;">
+    <fieldset>
+      <legend class="pb-5"> <strong> Login info </strong> </legend>
+      <br>
+        {% csrf_token %}
+        {{ login_form|crispy }}
+        <button class="btn btn-success m-3" type="submit">Login</button>
+    </fieldset>
+  </form>
+
+  <h4 class="text-center pt-lg-5" > Don't have an account? <a href="/register" style="color:black;">Create an account</a></h4>
+</div>
+
+
+{% endblock content %}

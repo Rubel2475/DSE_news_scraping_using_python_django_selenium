@@ -1,0 +1,51 @@
+{% extends 'header.html' %}
+
+{%load static%}
+
+{% block title %}
+{% comment %} DSE news {% endcomment %}
+{{news_header}}
+{% endblock title %}
+
+<style type="text/css">
+  {% comment %} #body {
+    background: url({% static "background-2.webp" %});
+    background-size: cover;
+  } {% endcomment %}
+</style>
+
+{% block content %}
+
+  <div class="container-fluid col-9" >
+    <h5 class="p-2" style="text-align:center"> {{news_header}} </h5>
+  </div>
+
+      <!--CTA-->
+    <div class="container-fluid col-10" style="background-color: ">
+    <table class="table border">
+      <thead class="thead-dark">
+        <tr>
+          {% comment %} <th scope="col" style="text-align: center">ID</th> {% endcomment %}
+          <th scope="col" width="13%">TRADING CODE</th>
+          <th scope="col" style="text-align: center">NEWS TITLE</th>
+          <th scope="col" style="text-align: center">NEWS</th>
+          <th scope="col" width="10%" style="text-align: center">POST DATE</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for news in dse %}
+        <tr style="color:white">
+          {% comment %} <td scope="row">{{ news.id }}</td> {% endcomment %}
+          <td>{{ news.trading_code }}</td>
+          <td>{{ news.news_title }}</td>
+          <td>{{ news.news }}</td>
+          <td>{{ news.news_date }}</td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

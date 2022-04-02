@@ -1,0 +1,501 @@
+{% extends 'header.html' %}
+
+{% block title %} Add shared companies  {% endblock title %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+
+<!-- user input --> 
+<div class="container py-3" style="text-align:center">
+ 
+  <h2 class="mb-3" style="color:#0B373D">Add Your shared company</h2> <br>
+  <form method="POST" action="" class="container bg-info col-6">
+    {% csrf_token %}
+
+    <label for="trading_code"  class="pt-3 pb-3"><h4> Choose your shared company: </h4> </label>
+
+    {{ form|crispy }}
+    
+    <br>
+    <button class="btn btn-primary m-2" type="submit">Add</button>
+  </form>
+
+  <br> <br>
+
+  <!-- <a href="/userinput"><u> Add more company </u></a> -->
+</div>
+
+
+<h2 class="m-4" style="text-align:center"> <u> Trading code for listed companies </u> </h2>
+
+<div class="container" style="display: flex; height: 100px;">
+  
+  <div style="width: 50%; background: ;">
+    <ul> 
+        A
+        <li> AAMRANET  -  aamra networks limited </li>
+        <li> AAMRATECH  -  aamra technologies limited </li>
+        <li> ABB1STMF  -  AB Bank 1st Mutual fund </li>
+        <li> ABBANK  -  AB Bank Limited </li>
+        <li> ACFL  -  Aman Cotton Fibrous Limited </li>
+        <li> ACI  -  ACI Limited </li>
+        <li> ACIFORMULA  -  ACI Formulations Limited </li>
+        <li> ACMELAB  -  The ACME Laboratories Limited </li>
+        <li> ACMEPL  -  ACME Pesticides Limited </li>
+        <li> ACTIVEFINE  -  Active Fine Chemicals Limited </li>
+        <li> ADNTEL  -  ADN Telecom Limited </li>
+        <li> ADVENT  -  Advent Pharma Limited </li>
+        <li> AFCAGRO  -  AFC Agro Biotech Ltd. </li>
+        <li> AFTABAUTO  -  Aftab Automobiles Limited </li>
+        <li> AGNISYSL  -  Agni Systems Ltd. </li>
+        <li> AGRANINS  -  Agrani Insurance Co. Ltd. </li>
+        <li> AIBL1STIMF  -  AIBL 1st Islamic Mutual Fund </li>
+        <li> AIBLPBOND  -  AIBL Mudaraba Perpetual Bond </li>
+        <li> AIL  -  Alif Industries Limited </li>
+        <li> AL-HAJTEX  -  Al-Haj Textile Mills Limited </li>
+        <li> ALARABANK  -  Al-Arafah Islami Bank Ltd </li>
+        <li> ALIF  -  Alif Manufacturing Company Ltd. </li>
+        <li> ALLTEX  -  Alltex Industries Ltd. </li>
+        <li> AMANFEED  -  Aman Feed Limited </li>
+        <li> AMBEEPHA  -  Ambee Pharmaceuticals Ltd. </li>
+        <li> AMCL -  PRAN </li>  -  Agricultural Marketing Company Ltd.  -  Pran </li>
+        <li> ANLIMAYARN  -  Anlimayarn Dyeing Ltd. </li>
+        <li> ANWARGALV  -  Anwar Galvanizing Ltd. </li>
+        <li> AOL  -  Associated Oxygen Limited </li>
+        <li> APEXFOODS  -  Apex Foods Limited </li>
+        <li> APEXFOOT  -  Apex Footwear Limited. </li>
+        <li> APEXSPINN  -  Apex Spinning & Knitting Mills Limited </li>
+        <li> APEXTANRY  -  Apex Tannery Limited </li>
+        <li> APOLOISPAT  -  Appollo Ispat Complex Limited </li>
+        <li> APSCLBOND  -  APSCL Non-Convertible and Fully Redeemable Coupon Bearing Bond </li>
+        <li> ARAMIT  -  Aramit Limited </li>
+        <li> ARAMITCEM  -  Aramit Cement Limited </li>
+        <li> ARGONDENIM  -  Argon Denims Limited </li>
+        <li> ASIAINS  -  Asia Insurance Limited </li>
+        <li> ASIAPACINS  -  Asia Pacific General Insurance Co. Ltd. </li>
+        <li> ATCSLGF  -  Asian Tiger Sandhani Life Growth Fund </li>
+      B
+        <li> BANGAS  -  Bangas Ltd. </li>
+        <li> BANKASIA  -  Bank Asia Ltd. </li>
+        <li> BARKAPOWER  -  Baraka Power Limited </li>
+        <li> BATASHOE  -  Bata Shoe Company  -  Bangladesh </li> Limited </li>
+        <li> BATBC  -  British American Tobacco bangladesh Company Limited </li>
+        <li> BAYLEASING  -  Bay Leasing & Investment Limited </li>
+        <li> BBS  -  Bangladesh Building Systems Ltd. </li>
+        <li> BBSCABLES  -  BBS Cables Limited </li>
+        <li> BDAUTOCA  -  Bangladesh Autocars Ltd. </li>
+        <li> BDCOM  -  BDCOM Online Ltd. </li>
+        <li> BDFINANCE  -  Bangladesh Finance Limited </li>
+        <li> BDLAMPS  -  Bangladesh Lamps Limited </li>
+        <li> BDSERVICE  -  Bangladesh Services Ltd. </li>
+        <li> BDTHAI  -  Bd.Thai Aluminium Ltd. </li>
+        <li> BDTHAIFOOD  -  BD Thai Food & Beverage Limited </li>
+        <li> BDWELDING  -  Bangladesh Welding Electrodes Ltd. </li>
+        <li> BEACHHATCH  -  Beach Hatchery Ltd. </li>
+        <li> BEACONPHAR  -  Beacon Pharmaceuticals Limited </li>
+        <li> BENGALWTL  -  Bengal Windsor Thermoplastics Ltd. </li>
+        <li> BERGERPBL  -  Berger Paints Bangladesh Ltd. </li>
+        <li> BEXGSUKUK  -  Beximco Green Sukuk Al Istisna'a </li>
+        <li> BEXIMCO  -  Bangladesh Export Import Company Ltd. </li>
+        <li> BGIC  -  Bangladesh General Insurance Company Ltd. </li>
+        <li> BIFC  -  Bangladesh Industrial Fin. Co. Ltd. </li>
+        <li> BNICL  -  Bangladesh National Insurance Company Limited </li>
+        <li> BPML  -  Bashundhara Paper Mills Limited </li>
+        <li> BPPL  -  Baraka Patenga Power Limited </li>
+        <li> BRACBANK  -  BRAC Bank Ltd. </li>
+        <li> BSC  -  Bangladesh Shipping Corporation </li>
+        <li> BSCCL  -  Bangladesh Submarine Cable Company Limited </li>
+        <li> BSRMLTD  -  Bangladesh Steel Re-Rolling Mills Limited </li>
+        <li> BSRMSTEEL  -  BSRM Steels Limited </li>
+        <li> BXPHARMA  -  Beximco Pharmaceuticals Ltd. </li>
+        <li> BXSYNTH  -  Beximco Synthetics Ltd. </li>
+      C
+        <li> CAPMBDBLMF  -  CAPM BDBL Mutual Fund 01 </li>
+        <li> CAPMIBBLMF  -  CAPM IBBL Islamic Mutual Fund </li>
+        <li> CENTRALINS  -  Central Insurance Company Ltd. </li>
+        <li> CENTRALPHL  -  Central Pharmaceuticals Limited </li>
+        <li> CITYBANK  -  The City Bank Ltd. </li>
+        <li> CITYGENINS  -  City General Insurance Co. Ltd. </li>
+        <li> CNATEX  -  C & A Textiles Limited </li>
+        <li> CONFIDCEM  -  Confidence Cement Ltd. </li>
+        <li> CONTININS  -  Continental Insurance Ltd. </li>
+        <li> COPPERTECH  -  Coppertech Industries Limited </li>
+        <li> CROWNCEMNT  -  Crown Cement PLC. </li>
+        <li> CRYSTALINS  -  Crystal Insurance Company Limited </li>
+        <li> CVOPRL  -  CVO Petrochemical Refinery Limited </li>
+  D
+        <li> DACCADYE  -  The Dacca Dyeing & Manufacturing Co.Ltd. </li>
+        <li> DAFODILCOM  -  Daffodil Computers Ltd. </li>
+        <li> DBH  -  Delta Brac Housing Finance Corp. Ltd. </li>
+        <li> DBH1STMF  -  DBH First Mutual Fund </li>
+        <li> DEBARACEM  -  Aramit Cement Ltd. -  Deb-14% </li>
+        <li> DEBBDLUGG  -  Bangladesh Luggage Ind. Ltd. -  Deb-14% </li>
+        <li> DEBBDWELD  -  BD Welding Electrodes Ltd. -  Deb-15% </li>
+        <li> DEBBDZIPP  -  Bangladesh Zipper Ind. Ltd. -  Deb-14% </li>
+        <li> DEBBXDENIM  -  Beximco Denims Ltd. -  Deb-14% </li>
+        <li> DEBBXFISH  -  Beximco Fisheries Ltd. -  Deb-14% </li>
+        <li> DEBBXKNI  -  Beximco Knitting Ltd. -  Deb-14% </li>
+        <li> DEBBXTEX  -  Beximco Textiles Ltd. -  Deb-14% </li>
+        <li> DELTALIFE  -  Delta Life Insurance Company Ltd. </li>
+        <li> DELTASPINN  -  Delta Spinners Ltd. </li>
+        <li> DESCO  -  Dhaka Electric Supply Company Ltd. </li>
+        <li> DESHBANDHU  -  Deshbandhu Polymer Limited </li>
+        <li> DGIC  -  Desh General Insurance Company Limited </li>
+        <li> DHAKABANK  -  Dhaka Bank Ltd. </li>
+        <li> DHAKAINS  -  Dhaka Insurance Limited </li>
+        <li> DOMINAGE  -  Dominage Steel Building Systems Limited </li>
+        <li> DOREENPWR  -  Doreen Power Generations and Systems Limited </li>
+        <li> DSHGARME  -  Desh Garments Ltd. </li>
+        <li> DSSL  -  Dragon Sweater and Spinning Limited </li>
+        <li> DULAMIACOT  -  Dulamia Cotton Spinning Mills Ltd. </li>
+        <li> DUTCHBANGL  -  Dutch-Bangla Bank Ltd. </li>
+        E
+        <li> EASTERNINS  -  Eastern Insurance Company Ltd. </li>
+        <li> EASTLAND  -  Eastland Insurance Company Ltd. </li>
+        <li> EASTRNLUB  -  Eastern Lubricants Blenders Limited </li>
+        <li> EBL  -  Eastern Bank Ltd. </li>
+        <li> EBL1STMF  -  EBL First Mutual Fund </li>
+        <li> EBLNRBMF  -  EBL NRB Mutual Fund </li>
+        <li> ECABLES  -  Eastern Cables Ltd. </li>
+        <li> EGEN  -  eGeneration Limited </li>
+        <li> EHL  -  Eastern Housing Limited </li>
+        <li> EIL  -  Express Insurance Limited </li>
+        <li> EMERALDOIL  -  Emerald Oil Industries Ltd. </li>
+        <li> ENVOYTEX  -  Envoy Textiles Limited </li>
+        <li> EPGL  -  Energypac Power Generation Limited </li>
+        <li> ESQUIRENIT  -  Esquire Knit Composite Limited </li>
+        <li> ETL  -  Evince Textiles Limited </li>
+        <li> EXIM1STMF  -  EXIM Bank 1st Mutual Fund </li>
+        <li> EXIMBANK  -  Export Import  -  Exim </li> Bank of Bangladesh Limited </li>
+    F
+        <li> FAMILYTEX  -  Familytex  -  BD </li> Limited </li>
+        <li> FARCHEM  -  Far Chemical Industries Limited </li>
+        <li> FAREASTFIN  -  Fareast Finance & Investment Limited </li>
+        <li> FAREASTLIF  -  Fareast Islami Life Insurance Co. Ltd. </li>
+        <li> FASFIN  -  FAS Finance & Investment Limited </li>
+        <li> FBFIF  -  First Bangladesh Fixed Income Fund </li>
+        <li> FEDERALINS  -  Federal Insurance Company Ltd. </li>
+        <li> FEKDIL  -  Far East Knitting & Dyeing Industries Limited </li>
+        <li> FINEFOODS  -  Fine Foods Limited </li>
+        <li> FIRSTFIN  -  First Finance Limited </li>
+        <li> FIRSTSBANK  -  First Security Islami Bank Limited </li>
+        <li> FORTUNE  -  Fortune Shoes Limited </li>
+        <li> FUWANGCER  -  Fu-Wang Ceramic Industries Ltd. </li>
+        <li> FUWANGFOOD  -  Fu Wang Food Ltd. </li>
+  G
+        <li> GBBPOWER  -  GBB Power Ltd. </li>
+        <li> GEMINISEA  -  Gemini Sea Food Ltd. </li>
+        <li> GENEXIL  -  Genex Infosys Limited </li>
+        <li> GENNEXT  -  Generation Next Fashions Limited </li>
+        <li> GHAIL  -  Golden Harvest Agro Industries Ltd. </li>
+        <li> GHCL  -  Global Heavy Chemicals Limited </li>
+        <li> GLOBALINS  -  Global Insurance Company Ltd. </li>
+        <li> GOLDENSON  -  Golden Son Ltd. </li>
+        <li> GP  -  Grameenphone Ltd. </li>
+        <li> GPHISPAT  -  GPH Ispat Ltd. </li>
+        <li> GQBALLPEN  -  GQ Ball Pen Industries Ltd. </li>
+        <li> GRAMEENS2  -  Grameen One : Scheme Two </li>
+        <li> GREENDELMF  -  Green Delta Mutual Fund </li>
+        <li> GREENDELT  -  Green Delta Insurance Ltd. </li>
+        <li> GSPFINANCE  -  GSP Finance Company  -  Bangladesh </li> Limited </li>
+        H
+        <li> HAKKANIPUL  -  Hakkani Pulp & Paper Mills Ltd. </li>
+        <li> HEIDELBCEM  -  Heidelberg Cement Bangladesh Ltd. </li>
+        <li> HFL  -  Hamid Fabrics Limited </li>
+        <li> HRTEX  -  H.R.Textile Ltd. </li>
+        <li> HWAWELLTEX  -  Hwa Well Textiles  -  BD </li> Limited </li>
+      I
+        <li> IBBL2PBOND  -  IBBL 2nd Perpetual Mudaraba Bond </li>
+        <li> IBBLPBOND  -  IBBL Mudaraba Perpetual Bond </li>
+        <li> IBNSINA  -  The IBN SINA Pharmaceutical Industry Ltd. </li>
+        <li> IBP  -  Indo-Bangla Pharmaceuticals Limited </li>
+        <li> ICB  -  Investment Corporation Of Bangladesh </li>
+        <li> ICB3RDNRB  -  ICB AMCL Third NRB Mutual Fund </li>
+        <li> ICBAGRANI1  -  ICB AMCL First Agrani Bank Mutual Fund </li>
+        <li> ICBAMCL2ND  -  ICB AMCL Second Mutual Fund </li>
+        <li> ICBEPMF1S1  -  ICB Employees Provident MF 1: Scheme 1 </li>
+        <li> ICBIBANK  -  ICB Islamic Bank Limited </li>
+        <li> ICBSONALI1  -  ICB AMCL Sonali Bank Limited 1st Mutual Fund </li>
+        <li> IDLC  -  IDLC Finance Ltd. </li>
+        <li> IFADAUTOS  -  IFAD Autos Limited </li>
+        <li> IFIC  -  IFIC Bank Ltd. </li>
+        <li> IFIC1STMF  -  IFIC Bank 1st Mutual Fund </li>
+        <li> IFILISLMF1  -  IFIL Islamic Mutual Fund-1 </li>
+        <li> ILFSL  -  International Leasing & Financial Services Ltd. </li>
+        <li> IMAMBUTTON  -  Imam Button Industries Ltd. </li>
+        <li> INDEXAGRO  -  Index Agro Industries Limited </li>
+        <li> INTECH  -  Intech Limited </li>
+        <li> INTRACO  -  Intraco Refueling Station Limited </li>
+        <li> IPDC  -  IPDC Finance Limited </li>
+        <li> ISLAMIBANK  -  Islami Bank Bangladesh Limited </li>
+        <li> ISLAMICFIN  -  Islamic Finance & Investment Ltd. </li>
+        <li> ISLAMIINS  -  Islami Insurance Bangladesh Limited </li>
+        <li> ISNLTD  -  Information Services Network Ltd. </li>
+        <li> ITC  -  IT Consultants Limited </li>
+        J
+        <li> JAMUNABANK  -  Jamuna Bank Ltd. </li>
+        <li> JAMUNAOIL  -  Jamuna Oil Company Limited </li>
+        <li> JANATAINS  -  Janata Insurance Company Ltd. </li>
+        <li> JMISMDL  -  JMI Syringes & Medical Devices Ltd. </li>
+        <li> JUTESPINN  -  Jute Spinners Ltd. </li>
+      K
+        <li> KARNAPHULI  -  Karnaphuli Insurance Company Ltd. </li>
+        <li> KAY&QUE  -  Kay & Que  -  Bangladesh </li> Ltd. </li>
+        <li> KBPPWBIL  -  Khan Brothers PP Woven Bag Industries Limited </li>
+        <li> KDSALTD  -  KDS Accessories Limited </li>
+        <li> KEYACOSMET  -  Keya Cosmetics Ltd. </li>
+        <li> KOHINOOR  -  Kohinoor Chemicals Company  -  Bangladesh </li> Ltd. </li>
+        <li> KPCL  -  Khulna Power Company Limited </li>
+        <li> KPPL  -  Khulna Printing & Packaging Limited </li>
+        <li> KTL  -  Kattali Textile Limited </li>
+        <li> L
+        <li> LANKABAFIN  -  LankaBangla Finance Ltd. </li>
+        <li> LEGACYFOOT  -  Legacy Footwear Ltd. </li>
+        <li> LHBL  -  LafargeHolcim Bangladesh Limited </li>
+        <li> LIBRAINFU  -  Libra Infusions Limited </li>
+        <li> LINDEBD  -  Linde Bangladesh Limited </li>
+        <li> LOVELLO  -  Taufika Foods and Lovello Ice-cream PLC </li>
+        <li> LRBDL  -  Lub-rref  -  Bangladesh </li> Limited </li>
+        <li> LRGLOBMF1  -  LR Global Bangladesh Mutual Fund One </li>
+    </ul>
+  </div>
+
+  <div style="flex-grow: 1; background: ;">
+    <ul>
+        M
+        <li> MAKSONSPIN  -  Maksons Spinning Mills Limited </li>
+        <li> MALEKSPIN  -  Malek Spinning Mills Ltd. </li>
+        <li> MARICO  -  Marico Bangladesh Limited </li>
+        <li> MATINSPINN  -  Matin Spinning Mills Ltd. </li>
+        <li> MBL1STMF  -  MBL 1st Mutual Fund </li>
+        <li> MEGCONMILK  -  Meghna Condensed Milk Industries Ltd. </li>
+        <li> MEGHNACEM  -  Meghna Cement Mills Ltd. </li>
+        <li> MEGHNALIFE  -  Meghna Life Insurance Co. Ltd. </li>
+        <li> MEGHNAPET  -  Meghna Pet Industries Ltd. </li>
+        <li> MERCANBANK  -  Mercantile Bank Ltd. </li>
+        <li> MERCINS  -  Mercantile Insurance Co. Ltd. </li>
+        <li> METROSPIN  -  Metro Spinning Ltd. </li>
+        <li> MHSML  -  Mozaffar Hossain Spinning Mills Ltd. </li>
+        <li> MIDASFIN  -  MIDAS Financing Ltd. </li>
+        <li> MIRACLEIND  -  Miracle Industries Ltd. </li>
+        <li> MIRAKHTER  -  Mir Akhter Hossain Limited </li>
+        <li> MITHUNKNIT  -  Mithun Knitting and Dyeing Ltd. </li>
+        <li> MJLBD  -  MJL Bangladesh Limited </li>
+        <li> MLDYEING  -  M.L. Dyeing Limited </li>
+        <li> MONNOAGML  -  Monno Agro & General Machinery Limited </li>
+        <li> MONNOCERA  -  Monno Ceramic Industries Ltd. </li>
+        <li> MONNOFABR  -  Monno Fabrics Limited </li>
+        <li> MONOSPOOL  -  Bangladesh Monospool Paper Manufacturing Co. Limited </li>
+        <li> MPETROLEUM  -  Meghna Petroleum Limited </li>
+        <li> MTB  -  Mutual Trust Bank Ltd. </li>
+        N
+        <li> NAHEEACP  -  Nahee Aluminum Composite Panel Ltd. </li>
+        <li> NATLIFEINS  -  National Life Insurance Company Ltd. </li>
+        <li> NAVANACNG  -  Navana CNG Limited </li>
+        <li> NBL  -  National Bank Ltd. </li>
+        <li> NCCBANK  -  National Credit and Commerce Bank Ltd. </li>
+        <li> NCCBLMF1  -  NCCBL Mutual Fund-1 </li>
+        <li> NEWLINE  -  New Line Clothings Limited </li>
+        <li> NFML  -  National Feed Mill Limited </li>
+        <li> NHFIL  -  National Housing Fin. and Inv. Ltd. </li>
+        <li> NITOLINS  -  Nitol Insurance Co. Ltd. </li>
+        <li> NLI1STMF  -  NLI First Mutual Fund </li>
+        <li> NORTHERN  -  Northern Jute Manufacturing Co. Ltd. </li>
+        <li> NORTHRNINS  -  Northern Islami Insurance Limited </li>
+        <li> NPOLYMER  -  National Polymer Industries Ltd. </li>
+        <li> NRBCBANK  -  NRB Commercial Bank Limited </li>
+        <li> NTC  -  National Tea Company Ltd. </li>
+        <li> NTLTUBES  -  National Tubes Limited </li>
+        <li> NURANI  -  Nurani Dyeing & Sweater Limited </li>
+        O
+        <li> OAL  -  Olympic Accessories Limited </li>
+        <li> OIMEX  -  Oimex Electrode Limited </li>
+        <li> OLYMPIC  -  Olympic Industries Ltd. </li>
+        <li> ONEBANKLTD  -  One Bank Limited </li>
+        <li> ORIONINFU  -  Orion Infusion Ltd. </li>
+        <li> ORIONPHARM  -  Orion Pharma Ltd. </li>
+  P
+        <li> PADMALIFE  -  Padma Islami Life Insurance Limited </li>
+        <li> PADMAOIL  -  Padma Oil Co. Ltd. </li>
+        <li> PAPERPROC  -  Paper Processing & Packaging Limited </li>
+        <li> PARAMOUNT  -  Paramount Insurance Company Ltd. </li>
+        <li> PDL  -  Pacific Denims Limited </li>
+        <li> PENINSULA  -  The Peninsula Chittagong Limited </li>
+        <li> PEOPLESINS  -  Peoples Insurance Company Ltd. </li>
+        <li> PF1STMF  -  Phoenix Finance 1st Mutual Fund </li>
+        <li> PHARMAID  -  Pharma Aids </li>
+        <li> PHENIXINS  -  Phoenix Insurance Company Ltd. </li>
+        <li> PHOENIXFIN  -  Phoenix Finance and Investments Ltd. </li>
+        <li> PHPMF1  -  PHP First Mutual Fund </li>
+        <li> PIONEERINS  -  Pioneer Insurance Company Ltd. </li>
+        <li> PLFSL  -  Peoples Leasing and Fin. Services Ltd. </li>
+        <li> POPULAR1MF  -  Popular Life First Mutual Fund </li>
+        <li> POPULARLIF  -  Popular Life Insurance Co. Ltd. </li>
+        <li> POWERGRID  -  Power Grid Company of Bangladesh Ltd. </li>
+        <li> PRAGATIINS  -  Pragati Insurance Ltd </li>
+        <li> PRAGATILIF  -  Pragati Life Insurance Ltd. </li>
+        <li> PREBPBOND  -  Premier Bank Perpetual Bond </li>
+        <li> PREMIERBAN  -  Premier Bank Ltd. </li>
+        <li> PREMIERCEM  -  Premier Cement Mills Limited </li>
+        <li> PREMIERLEA  -  Premier Leasing & Finance Limited </li>
+        <li> PRIME1ICBA  -  Prime Bank 1st ICB AMCL Mutual Fund </li>
+        <li> PRIMEBANK  -  Prime Bank Ltd. </li>
+        <li> PRIMEFIN  -  Prime Finance & Investment Ltd. </li>
+        <li> PRIMEINSUR  -  Prime Insurance Company Ltd. </li>
+        <li> PRIMELIFE  -  Prime Islami Life Insurance Ltd. </li>
+        <li> PRIMETEX  -  Prime Textile Spinning Mills Limited </li>
+        <li> PROGRESLIF  -  Progressive Life Insurance Co. Ltd. </li>
+        <li> PROVATIINS  -  Provati Insurance Company Limited </li>
+        <li> PTL  -  Paramount Textile Limited </li>
+        <li> PUBALIBANK  -  Pubali Bank Ltd. </li>
+        <li> PURABIGEN  -  Purabi Gen. Insurance Company Ltd. </li>
+    Q
+        <li> QUASEMIND  -  Quasem Industries Ltd. </li>
+        <li> QUEENSOUTH  -  Queen South Textile Mills Limited </li>
+      R
+        <li> RAHIMAFOOD  -  Rahima Food Corporation Limited </li>
+        <li> RAHIMTEXT  -  Rahim Textile Mills Ltd. </li>
+        <li> RAKCERAMIC  -  RAK Ceramics  -  Bangladesh </li> Limited </li>
+        <li> RANFOUNDRY  -  Rangpur Foundry Ltd. </li>
+        <li> RDFOOD  -  Rangpur Dairy & Food Products Ltd. </li>
+        <li> RECKITTBEN  -  Reckitt Benckiser -  Bd. </li>Ltd. </li>
+        <li> REGENTTEX  -  Regent Textile Mills Limited </li>
+        <li> RELIANCE1  -  Reliance One the first scheme of Reliance Insurance Mutual Fund </li>
+        <li> RELIANCINS  -  Reliance Insurance Ltd. </li>
+        <li> RENATA  -  Renata Ltd. </li>
+        <li> RENWICKJA  -  Renwick Jajneswar & Co  -  Bd </li> Ltd. </li>
+        <li> REPUBLIC  -  Republic Insurance Company Limited </li>
+        <li> RINGSHINE  -  Ring Shine Textiles Limited </li>
+        <li> RNSPIN  -  R.N. Spinning Mills Limited </li>
+        <li> ROBI  -  Robi Axiata Limited </li>
+        <li> RSRMSTEEL  -  Ratanpur Steel Re-Rolling Mills Limited </li>
+        <li> RUNNERAUTO  -  Runner Automobiles Limited </li>
+        <li> RUPALIBANK  -  Rupali Bank Ltd. </li>
+        <li> RUPALIINS  -  Rupali Insurance Company Ltd. </li>
+        <li> RUPALILIFE  -  Rupali Life Insurance Company Limited </li>
+  S
+        <li> SAFKOSPINN  -  Safko Spinnings Mills Ltd. </li>
+        <li> SAIFPOWER  -  SAIF Powertec Limited </li>
+        <li> SAIHAMCOT  -  Saiham Cotton Mills Limited </li>
+        <li> SAIHAMTEX  -  Saiham Textile Mills Ltd. </li>
+        <li> SALAMCRST  -  S. Alam Cold Rolled Steels Ltd. </li>
+        <li> SALVOCHEM  -  Salvo Chemical Industry Limited </li>
+        <li> SAMATALETH  -  Samata Leather Complex Ltd. </li>
+        <li> SAMORITA  -  Samorita Hospital Limited </li>
+        <li> SANDHANINS  -  Sandhani Life Insurance Company Ltd. </li>
+        <li> SAPORTL  -  Summit Alliance Port Limited </li>
+        <li> SAVAREFR  -  Savar Refractories Limited </li>
+        <li> SBACBANK  -  South Bangla Agriculture & Commerce Bank Limited </li>
+        <li> SEAPEARL  -  Sea Pearl Beach Resort & Spa Limited </li>
+        <li> SEMLFBSLGF  -  SEML FBLSL Growth Fund </li>
+        <li> SEMLIBBLSF  -  SEML IBBL Shariah Fund </li>
+        <li> SEMLLECMF  -  SEML Lecture Equity Management Fund </li>
+        <li> SHAHJABANK  -  Shahjalal Islami Bank Ltd. </li>
+        <li> SHASHADNIM  -  Shasha Denims Limited </li>
+        <li> SHEPHERD  -  Shepherd Industries Limited </li>
+        <li> SHURWID  -  Shurwid Industries Limited </li>
+        <li> SHYAMPSUG  -  Shyampur Sugar Mills Ltd. </li>
+        <li> SIBL  -  Social Islami Bank Limited </li>
+        <li> SILCOPHL  -  Silco Pharmaceuticals Limited </li>
+        <li> SILVAPHL  -  Silva Pharmaceuticals Limited </li>
+        <li> SIMTEX  -  Simtex Industries Limited </li>
+        <li> SINGERBD  -  Singer Bangladesh Limited </li>
+        <li> SINOBANGLA  -  Sinobangla Industries Ltd. </li>
+        <li> SJIBLPBOND  -  SJIBL Mudaraba Perpetual Bond </li>
+        <li> SKICL  -  Sena Kalyan Insurance Company Limited </li>
+        <li> SKTRIMS  -  SK Trims & Industries Limited </li>
+        <li> SONALIANSH  -  Sonali Aansh Industries Limited </li>
+        <li> SONALILIFE  -  Sonali Life Insurance Company Limited </li>
+        <li> SONALIPAPR  -  Sonali Paper & Board Mills Ltd. </li>
+        <li> SONARBAINS  -  Sonar Bangla Insurance Ltd. </li>
+        <li> SONARGAON  -  Sonargaon Textiles Ltd. </li>
+        <li> SOUTHEASTB  -  Southeast Bank Ltd. </li>
+        <li> SPCERAMICS  -  Shinepukur Ceramics Limited </li>
+        <li> SPCL  -  Shahjibazar Power Co. Ltd. </li>
+        <li> SQUARETEXT  -  Square Textile Ltd. </li>
+        <li> SQURPHARMA  -  Square Pharmaceuticals Ltd. </li>
+        <li> SSSTEEL  -  S. S. Steel Limited </li>
+        T
+        <li> T05Y0715  -  5 Years BGT Bonds Issued on 21.07.2010 </li>
+        <li> T05Y0815  -  5 Years BGT Bonds Issued on 18.08.2010 </li>
+        <li> T10Y0117  -  10 Years 8.5% BGT Bond Issued 10.01.2007 </li>
+        <li> T10Y0118  -  10 Years BGT Bond Issued 02.01.2008 </li>
+        <li> T10Y0119  -  10 Years BGT Bond Issued 07.01.2009 </li>
+        <li> T10Y0121  -  10 years BGT Bond Issued 05.01.2011 </li>
+        <li> T10Y0126  -  10Y BGTB 20/01/2026 </li>
+        <li> T10Y0214  -  10 Years 8.5% BGT Bond Issued 090204 </li>
+        <li> T10Y0215  -  10 Years 8.5% BGT Bond Issued 070205 </li>
+        <li> T10Y0216  -  10 Years 8.5% BGT Bond Issued 13022006 </li>
+        <li> T10Y0217  -  10 Years 8.5% BGT Bond Issued 07.02.2007 </li>
+        <li> T10Y0218  -  10 Years BGT Bond Issued 06.02.2008 </li>
+        <li> T10Y0219  -  10 Years BGT Bond Issued 04.02.2009 </li>
+        <li> T10Y0220  -  10 years BGT Bond issued on 03.02.2010 </li>
+        <li> T10Y0221  -  10 years BGT Bond Issued 02.02.2011 </li>
+        <li> T10Y0317  -  10 Years 8.5% BGT Bond Issued 07.03.2007 </li>
+        <li> T10Y0318  -  10 Years BGT Bond Issued 05.03.2008 </li>
+        <li> T10Y0319  -  10 Years BGT Bond Issued 04.03.2009 </li>
+        <li> T10Y0320  -  10 years BGT Bond issued on 03.03.2010 </li>
+        <li> T10Y0321  -  10 years BGT Bond Issued 02.03.2011 </li>
+        <li> T10Y0414  -  10 Years 8.5% BGT Bond Issued 050404 </li>
+        <li> T10Y0415  -  10 Years 8.5% BGT Bond Issued 040405 </li>
+        <li> T10Y0416  -  10 Years 8.5% BGT Bond Issued 10042006 </li>
+        <li> T10Y0418  -  10 Years BGT Bond Issued 02.04.2008 </li>
+        <li> T10Y0419  -  10 Years BGT Bond Issued 08.04.2009 </li>
+        <li> T10Y0420  -  10 years BGT Bond Issued on 07.04.2010 </li>
+        <li> T10Y0421  -  10 years BGT Bond Issued 06.04.2011 </li>
+        <li> T10Y0517  -  10 Years BGT Bond Issued 09.05.2007 </li>
+        <li> T10Y0518  -  10 Years BGT Bond Issued 07.05.2008 </li>
+        <li> T10Y0519  -  10 Years BGT Bond Issued 06.05.2009 </li>
+        <li> T10Y0520  -  10 years BGT Bond Issued 05.05.2010 </li>
+        <li> T10Y0521  -  10 years BGT Bond Issued 04.05.2011 </li>
+        <li> T10Y0614  -  10 Years 8.5% BGT Bond Issued 070604 </li>
+        <li> T10Y0615  -  10 Years 8.5% BGT Bond Issued 060605 </li>
+        <li> T10Y0616  -  10 Years 8.5% BGT Bond Issued 12062006 </li>
+        <li> T10Y0617  -  10 Years BGT Bond Issued 06.06.2007 </li>
+        <li> T10Y0618  -  10 Years BGT Bond Issued 04.06.2008 </li>
+        <li> T10Y0619  -  10 Years BGT Bond Issued 03.06.2009 </li>
+        <li> T10Y0620  -  10 Years BGT Bond Issued 02.06.2010 </li>
+        <li> T10Y0621  -  10 years BGT Bond Issued 08.06.2011 </li>
+        <li> T10Y0717  -  10 Years BGT Bond Issued 04.07.2007 </li>
+        U
+        <li> UCB  -  United Commercial Bank Ltd. </li>
+        <li> UNILEVERCL  -  Unilever Consumer Care Limited </li>
+        <li> UNIONBANK  -  Union Bank Limited </li>
+        <li> UNIONCAP  -  Union Capital Limited </li>
+        <li> UNIONINS  -  Union Insurance Company Limited </li>
+        <li> UNIQUEHRL  -  Unique Hotel & Resorts Limited </li>
+        <li> UNITEDFIN  -  United Finance Limited </li>
+        <li> UNITEDINS  -  United Insurance Ltd. </li>
+        <li> UPGDCL  -  United Power Generation & Distribution Company Ltd. </li>
+        <li> USMANIAGL  -  Usmania Glass Sheet Factory Limited </li>
+        <li> UTTARABANK  -  Uttara Bank Limited </li>
+        <li> UTTARAFIN  -  Uttara Finance and Investments Limited </li>
+      V
+        <li> VAMLBDMF1  -  Vanguard AML BD Finance Mutual Fund One </li>
+        <li> VAMLRBBF  -  Vanguard AML Rupali Bank Balanced Fund </li>
+        <li> VFSTDL  -  VFS Thread Dyeing Limited </li>
+        <li> W
+        <li> WALTONHIL  -  Walton Hi-Tech Industries PLC </li>
+        <li> WATACHEM  -  Wata Chemicals Limited </li>
+        <li> WMSHIPYARD  -  Western Marine Shipyard Limited </li>
+        Y
+        <li> YPL  -  Yeakin Polymer Limited </li>
+        Z
+        <li> ZAHEENSPIN  -  Zaheen Spinning Limited </li>
+        <li> ZAHINTEX  -  Zahintex Industries Limited </li>
+        <li> ZEALBANGLA  -  Zeal Bangla Sugar Mills Ltd. </li>
+        <li> Additional
+        <li> 1JANATAMF  -  First Janata Bank Mutual Fund </li>
+        <li> 1STPRIMFMF  -  Prime Finance First Mutual Fund </li> 
+      </ul>
+
+    </br>
+    <a href="/userpage"><u> <h3> Back to userpage </h3> </u></a>
+
+  </div>
+</div>
+
+{% endblock %}
+
+

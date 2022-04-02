@@ -1,0 +1,48 @@
+{% extends 'header.html' %}
+
+{% block title %}
+News for You
+{% endblock title %}
+
+  {% block content %}
+
+  <h5 class="p-2" style="text-align:center"> {{news_header}} </h5>
+
+        <!--CTA-->
+  <div class="container-fluid col-10" style="background-color: ">
+    <table class="table border">
+      <thead class="thead-dark">
+        <tr>
+          {% comment %} <th scope="col" style="text-align: center">ID</th> {% endcomment %}
+          <th scope="col" width="13%">TRADING CODE</th>
+          <th scope="col" style="text-align: center">NEWS TITLE</th>
+          <th scope="col" style="text-align: center">NEWS</th>
+          <th scope="col" width="10%" style="text-align: center">POST DATE</th>
+        </tr>
+      </thead>
+
+        <tbody>
+          {% for code in input %}
+            {% if code.username == logged_username %}
+
+              {% for news in dse %}
+              <tr style="color:white">
+                {% if news.trading_code == code.trading_code %}
+                  {% comment %} <td scope="row">{{ news.id }}</td> {% endcomment %}
+                  <td>{{ news.trading_code }}</td>
+                  <td>{{ news.news_title }}</td>
+                  <td>{{ news.news }}</td>
+                  <td>{{ news.news_date }}</td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+            
+        </tbody>
+    </table>
+
+  {% endblock %}
+
+
+  

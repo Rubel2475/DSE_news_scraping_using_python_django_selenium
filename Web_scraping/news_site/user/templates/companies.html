@@ -1,0 +1,36 @@
+{% extends 'header.html' %}
+
+{% block title %} Your shared companies  {% endblock title %}
+
+    {% block content %} 
+    <div class="container" style="text-align:center">     
+    <h3 class="p-4" style="color:#0B373D"> <u> Your listed companies </U> </h3>
+
+    {% for code in input %}
+        {% if code.username == logged_username %}
+            <table align="center" class="table table-bordered table-striped" style="width: 400px;">
+                <tr class="text-center"> 
+                    <td> <h5 style="color:white" class="container m-2"> {{code.trading_code}} </h5> </td> 
+                    <td >
+                        <form method="post" action="{% url 'user:delete_company' code.id %}">  
+                            {% csrf_token %}
+                            <button class="btn btn-danger" type="submit" value="Delete company" onclick="return confirm('Are you sure to remove this company from your shared company list?')"> Remove </button>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        {% endif %}
+    {% endfor %}
+
+  
+  </br> </br>
+  <button> <a href="/userinput"> Add more company </a> </button>
+  
+  </br> </br>
+  <button> <a href="/userpage"> Back to userpage </a> </button>
+
+</div>
+
+{% endblock %}
+
+
