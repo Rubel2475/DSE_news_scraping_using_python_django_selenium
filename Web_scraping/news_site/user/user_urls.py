@@ -18,6 +18,7 @@ urlpatterns = [
     path("userinput", views.user_form, name="user_form"),
     path("contact", views.contact, name="contact"),
     path("listed_company", views.company_view, name="companies"),
+    path("company_news/<td>", views.company_specific_news_view, name="company_news"),
     path("listed_company/<id>", views.delete_company, name="delete_company"),
     path("about_dse", views.about_dse, name="about_dse"),
 ]

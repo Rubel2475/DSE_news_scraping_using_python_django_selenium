@@ -3,28 +3,21 @@
 {%load static%}
 
 {% block title %}
-{% comment %} DSE news {% endcomment %}
-{{news_header}}
+specific company news
 {% endblock title %}
 
-<style type="text/css">
-  {% comment %} #body {
-    background: url({% static "background-2.webp" %});
-    background-size: cover;
-  } {% endcomment %}
-</style>
 
 {% block content %}
 
-  <div class="container-fluid col-9" >
-    <h5 class="p-1" style="text-align:center"> {{news_header}} </h5>
+    <div class="container-fluid col-9" >
+    <h5 class="p-2" style="text-align:center"> {{t_code}} 's News </h5>
   </div>
 
       <!--CTA-->
     <div class="container-fluid col-10" style="background-color: ">
-    <table class="table border border-success">
+    <table class="table border">
       <thead class="thead-dark">
-        <tr>
+        <tr >
           {% comment %} <th scope="col" style="text-align: center">ID</th> {% endcomment %}
           <th scope="col" width="13%">TRADING CODE</th>
           <th scope="col" style="text-align: center">NEWS TITLE</th>
@@ -33,15 +26,16 @@
         </tr>
       </thead>
 
-      <tbody>
-        {% for news in dse %}
+      <tbody class="f">
+        {% for news in all_news %}
         <tr>
-        {% comment %} <tr style="color:white"> {% endcomment %}
           {% comment %} <td scope="row">{{ news.id }}</td> {% endcomment %}
-          <td>{{ news.trading_code_id }}</td>
-          <td>{{ news.news_title }}</td>
-          <td>{{ news.news }}</td>
-          <td>{{ news.news_date }}</td>
+            {% if news.trading_code_id == t_code %}
+                <td>{{ news.trading_code_id }}</td>
+                <td>{{ news.news_title }}</td>
+                <td>{{ news.news }}</td>
+                <td>{{ news.news_date }}</td>
+            {%endif%}
         </tr>
 
         {% endfor %}

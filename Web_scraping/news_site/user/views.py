@@ -15,11 +15,13 @@ from .forms import inputForm, contact_form
 # Create your views here.
 
 def homepage(request):
-    if request.user.is_authenticated:
-        return redirect("user:userpage")
-    else:
-        return HttpResponseRedirect("/all_news")
-        #return render(request=request, template_name='home.html')
+    return HttpResponseRedirect("/all_news")
+    
+    # if request.user.is_authenticated:
+    #     return redirect("user:userpage")
+    # else:
+    #     return HttpResponseRedirect("/all_news")
+    #     #return render(request=request, template_name='home.html')
 
 
 def register_request(request):
@@ -29,7 +31,7 @@ def register_request(request):
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
-            return redirect("user:userpage")
+            return redirect("user:homepage")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
@@ -50,7 +52,7 @@ def login_request(request):
                 #messages.success(request, "You are now logged in as {username}")
                 #messages.info(request, "Hello, " + username + ".  You are now logged in as, " + username)
                 #messages.add_message(request, messages.ERROR,"You are now logged in as, " + {username})
-                return redirect("user:userpage")
+                return redirect("user:homepage")
             else:
                 messages.success(request, "Invalid username or password.")
         else:
@@ -68,12 +70,14 @@ def logout_request(request):
 
 def userpage_view(request):
 
-    dse_news = News.objects.all()
+    #dse_news = News.objects.all()
+    #dse_news = request.session['dse_news']
+    
     input = userInput.objects.all()
     
     user_name = request.user.get_username()
     context = {
-        "dse": dse_news,
+        # "dse": dse_news,
         "input": input,
         "logged_username": user_name,
     }
@@ -112,6 +116,18 @@ def company_view(request):
         "logged_username": user_name,
     }
     return render(request=request, template_name='companies.html', context=context)
+
+
+
+def company_specific_news_view(request, td):
+    trading_code = td
+    all_news = News.objects.all()
+    
+    context = {
+        "all_news" : all_news,
+        "t_code" : trading_code,
+    }
+    return render(request=request, template_name='company_specific_news.html', context=context)
 
 
 

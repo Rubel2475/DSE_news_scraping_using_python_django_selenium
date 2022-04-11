@@ -10,7 +10,7 @@ News for You
 
         <!--CTA-->
   <div class="container-fluid col-10" style="background-color: ">
-    <table class="table border">
+    <table class="table border border-info">
       <thead class="thead-dark">
         <tr>
           {% comment %} <th scope="col" style="text-align: center">ID</th> {% endcomment %}
@@ -26,10 +26,11 @@ News for You
             {% if code.username == logged_username %}
 
               {% for news in dse %}
-              <tr style="color:white">
-                {% if news.trading_code == code.trading_code %}
+              <tr>
+              {% comment %} <tr style="color:white"> {% endcomment %}
+                {% if news.trading_code_id == code.trading_code %}
                   {% comment %} <td scope="row">{{ news.id }}</td> {% endcomment %}
-                  <td>{{ news.trading_code }}</td>
+                  <td>{{ news.trading_code_id }}</td>
                   <td>{{ news.news_title }}</td>
                   <td>{{ news.news }}</td>
                   <td>{{ news.news_date }}</td>

@@ -10,11 +10,18 @@
         {% if code.username == logged_username %}
             <table align="center" class="table table-bordered table-striped" style="width: 400px;">
                 <tr class="text-center"> 
-                    <td> <h5 style="color:white" class="container m-2"> {{code.trading_code}} </h5> </td> 
+                    <td> <h5  class="container m-2"> {{code.trading_code}} </h5> </td> 
                     <td >
                         <form method="post" action="{% url 'user:delete_company' code.id %}">  
                             {% csrf_token %}
                             <button class="btn btn-danger" type="submit" value="Delete company" onclick="return confirm('Are you sure to remove this company from your shared company list?')"> Remove </button>
+                        </form>
+                    </td>
+
+                    <td >
+                        <form method="post" action="{% url 'user:company_news' code.trading_code %}">  
+                            {% csrf_token %}
+                            <button class="btn btn-info" type="submit" value="see news"> See News </button>
                         </form>
                     </td>
                 </tr>
